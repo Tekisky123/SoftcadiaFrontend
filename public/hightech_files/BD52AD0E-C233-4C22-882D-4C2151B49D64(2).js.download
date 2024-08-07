@@ -1,0 +1,62 @@
+// Copyright 2006-2023 ClickTale Ltd., US Patent Pending
+
+window.ClickTaleGlobal = window.ClickTaleGlobal || {};
+window.ClickTaleSettings = window.ClickTaleSettings || {};
+
+ClickTaleGlobal.init = ClickTaleGlobal.init || {};
+ClickTaleGlobal.scripts = ClickTaleGlobal.scripts || {};
+
+ClickTaleGlobal.scripts.filter = ClickTaleGlobal.scripts.filter || (function () {
+	var recordingThreshold = Math.random() * 100;
+
+	return {
+		isRecordingApproved: function(percentage) {
+			return recordingThreshold <= percentage;
+		}
+	}
+})();
+	
+		
+// Copyright 2006-2023 ClickTale Ltd., US Patent Pending
+// PID: 3111
+
+
+
+/*browsers exclusion start*/ ClickTaleSettings.PTC.doOnlyWhen = function (toDoHandler, toCheckHandler, interval, times, failHandler) {
+            if ((!toDoHandler) || (!toCheckHandler)) return;
+            if (typeof interval == 'undefined') interval = 1000;
+            if (typeof times == 'undefined') times = 20;
+        
+            if (--times < 0) {
+                if (typeof failHandler === 'function') {
+                    failHandler();
+                }
+                return;
+            }
+            if (toCheckHandler()) {
+                toDoHandler();
+                return;
+            }
+        
+            setTimeout(function () { ClickTaleSettings.PTC.doOnlyWhen(toDoHandler, toCheckHandler, interval, times, failHandler); }, interval);
+        }
+        ClickTaleSettings.PTC.doOnlyWhen(function () { 
+            if (window.ClickTaleSettings.PTC.okToRunPCC) { 
+                (function(){
+                    window.ClickTaleSettings = window.ClickTaleSettings || {};
+                    ClickTaleSettings.PTC = ClickTaleSettings.PTC || {};
+                    ClickTaleSettings.PTC.originalPCCLocation = 'P27_PID3111';
+                    
+                    function e(a,b){b||(b=document);return b instanceof Element||b instanceof Document?Array.prototype.slice.call(b.querySelectorAll(a)):"string"===typeof b?e(a,document.querySelectorAll(b)):Array.isArray(b)||b instanceof HTMLCollection||b instanceof NodeList?Array.prototype.reduce.call(b,function(c,d){return c.concat(Array.prototype.slice.call(d.querySelectorAll(a)))},[]):[]}
+function f(a,b){if(a&&a.nodeType&&9===a.nodeType)return!1;var c=Element.prototype;f=function(d,g){return d&&document.documentElement.contains(d)?f.matches.call(d,g):!1};f.matches=c.webkitMatchesSelector||c.mozMatchesSelector||c.msMatchesSelector||c.matches;return f(a,b)};var h=!1,k=Object.defineProperty&&Object.defineProperty({},"passive",{get:function(){h=!0}});document.addEventListener("test",function(){},k);var l=h?{passive:!0,capture:!0}:!0,m=0;function n(a){function b(){2==++c&&a()}if(!~n.j.indexOf(a)){n.j.push(a);var c=0;p(b);if("function"==typeof ClickTaleIsRecording&&!0===ClickTaleIsRecording())b();else{var d=window.ClickTaleOnRecording||function(){};window.ClickTaleOnRecording=function(){b();return d.apply(this,arguments)}}}}n.j=[];
+function p(a){function b(){c||(c=!0,a())}var c=!1;"loading"!=document.readyState?b():document.addEventListener&&document.addEventListener("DOMContentLoaded",b,!1)};function q(a){return btoa(encodeURIComponent(a).replace(/%([0-9A-F]{2})/g,function(b,c){return String.fromCharCode(+("0x"+c))}))};function r(a){window._uxa=window._uxa||[];window._uxa.push.apply(window._uxa,arguments)}function t(a){a=void 0===a?window.location.pathname+window.location.hash.replace("#","?__"):a;r(["trackPageview",a])};function u(a){"function"===typeof ClickTaleExec&&ClickTaleExec(a)}function v(){"function"===typeof ClickTaleStop&&ClickTaleStop()}function w(a,b){"function"===typeof ClickTaleLogical&&(x.h&&x.h instanceof y&&x.h.clear(),b?ClickTaleLogical(a,b):ClickTaleLogical(a))}function A(){if("function"===typeof ClickTaleDetectAgent){var a=ClickTaleDetectAgent();if(a)return A=function(){return a},A()}return null}
+function B(){var a=C,b=document.location,c=D,d=E;if(F){F=!1;var g=g||400;d?(v(),window.ClickTaleIncludedOnDOMReady=!0,window.ClickTaleIncludedOnWindowLoad=!0,"function"===typeof ClickTaleUploadPage&&ClickTaleUploadPage(void 0,void 0),w(b.href,c)):(Array.isArray(window.ClickTaleOnStop)&&window.ClickTaleOnStop.forEach(function(z){if("function"===typeof z)try{z.call(window)}catch(I){}}),t(b.pathname));a();clearTimeout(G);G=setTimeout(function(){F=!0},g)}}var G=-1,F=!0;
+function y(){this.i=!1;this.g="";this.init=function(a){this.i||(this.i=!0,document.addEventListener("input",this.l,l));this.o(a);this.g=this.g?this.g+","+a:a};this.l=function(a){a=a.target;if(f(a,this.g)){var b=e(this.g).indexOf(a);u("document.querySelectorAll('"+this.g+"')["+b+"].value = Base64Decode('"+q(a.value)+"');")}}.bind(this);this.o=function(a){var b="";e(a).forEach(function(c,d){b+="document.querySelectorAll('"+a+"')["+d+"].value = Base64Decode('"+q(c.value)+"'); "});b&&u(b)};this.clear=
+function(){document.removeEventListener("input",this.l,l);this.i=!1;this.g=""}}function x(a){x.h=x.h||new y;x.h.init(a)}x.h=null;var E=!1,H=!0,D=location.href;function C(){D=location.href;if(H)H=!1;else for(var a=window.ClickTaleSettings&&window.ClickTaleSettings.PTC&&window.ClickTaleSettings.PTC.InitFuncs?window.ClickTaleSettings.PTC.InitFuncs:[],b=0,c=a.length;b<c;b++)if("function"===typeof a[b])a[b]();E||n(function(){E=!0})}
+(function(a){function b(){2==++m&&a()}p(b);if("function"==typeof ClickTale)b();else{Array.isArray(window.ClickTaleOnReadyList)&&window.ClickTaleOnReadyList.push(b);var c=window.ClickTaleOnRecording||function(){};window.ClickTaleOnRecording=function(){b();return c.apply(this,arguments)}}})(function(){window.ClickTaleFirstPCCGo||(window.ClickTaleFirstPCCGo=!0,A(),C())});window.clickTaleStartEventSignal=function(){B()};window.clickTaleEndEventSignal=function(){v()};
+                })();
+            } 
+        }, function () { return !!(window.ClickTaleSettings && ClickTaleSettings.PTC && typeof ClickTaleSettings.PTC.okToRunPCC != 'undefined'); }, 500, 20);
+
+
+//Signature:Zftor5D+hOtsHMs8vTWlegBJw79GeNSCKrFtUqLaeIIVw2TzMMOnGeltCjlrrhiExAC/esVrEVL31nM6aDvstDHyMCnG+IQMSydOYB7fZgZYO4jboO4wT7IV7qkx92K5hHECZFAQFsBr6d5J7OsFliXkXkONhLjuR7O3z4LrYr0=

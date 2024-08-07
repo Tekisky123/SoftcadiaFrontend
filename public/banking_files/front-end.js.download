@@ -1,0 +1,134 @@
+
+	 function bravesyndication() {
+		this.sitesArray = [];
+		this.endpoint = '';
+		this.identifier = syndicationVariables.siteName;
+
+		this.initialize = function () {};
+
+
+		this.initialize();
+		return this;
+	}
+
+	bravesyndication.prototype.getSites = function (callback ) {
+		var bs = this;
+		jQuery.ajax({
+			url: 'http://insights.accenture.com/manifest/',
+			type: 'GET',
+			dataType: 'json',
+			data: {}
+		})
+		.done(function(response) {
+			bs.sitesArray = response;
+
+			response.forEach( function(site) {
+				if (syndicationVariables.siteName.indexOf(site.identifier) > -1 ||
+						site.identifier.indexOf(syndicationVariables.siteName) > -1 ||
+						syndicationVariables.siteUrl.indexOf(site.address) > -1 ||
+						site.address.indexOf(syndicationVariables.siteUrl) > -1) {
+					bs.endpoint = site.endpoint;
+				}
+			});
+
+			callback(null, response);
+		})
+		.fail(function(response) {
+			callback({
+					message: "Accenture Syndication Error: Could not build Sites Array."
+				});
+		});
+	};
+
+	bravesyndication.prototype.getIdentifier = function( identifier ) {};
+
+	bravesyndication.prototype.getPosts = function( remotePosts ) {
+		var bs = this;
+		var posts = [];
+		var processed = 0;
+		// Response
+		function checkDone(processed) {
+			if (processed >= bs.sitesArray.length || bs.sitesArray.length === 0) {
+				posts = posts.sort( function ( a, b) {
+			    a = new Date(a.post_date.replace(/-/g, "/"));
+			    b = new Date(b.post_date.replace(/-/g, "/"));
+			    return a>b ? -1 : a<b ? 1 : 0;
+				});
+				remotePosts(posts);
+			}
+		}
+
+		bs.sitesArray.forEach( function( site ) {
+			var endpoint = 'posts/' + bs.endpoint;
+			if (bs.endpoint === site.endpoint) {
+				endpoint = 'all/';
+			}
+				jQuery.ajax({
+					url: site.address + '/wp-json/syndication/v2/' + endpoint,
+					type: 'GET',
+					dataType: 'json',
+					data: {}
+				})
+				.success(function(response) {
+					posts = posts.concat(response);
+				})
+				.error(function(response) {
+					console.warn("Accenture Syndication: Could not fetch posts from: " + site.address + endpoint);
+				})
+				.always(function() {
+					processed++;
+					checkDone(processed);
+				});
+		});
+	};
+
+	bravesyndication.prototype.getAuthors = function( remoteAuthors ) {
+		var bs = this;
+		var author = [];
+		var processed = 0;
+		// Response
+		function checkDone(processed) {
+			if (processed >= bs.sitesArray.length || bs.sitesArray.length === 0) {
+				remoteAuthors(author);
+			}
+		}
+
+		bs.sitesArray.forEach( function( site ) {
+			var endpoint = 'authors/' +  bs.endpoint;
+			if (bs.endpoint === site.endpoint) {
+				processed++;
+				checkDone(processed);
+				return;
+			}
+				jQuery.ajax({
+					url: site.address + '/wp-json/syndication/v2/' + endpoint,
+					type: 'GET',
+					dataType: 'json',
+					data: {}
+				})
+				.success(function(response) {
+					author = author.concat(response);
+				})
+				.error(function(XMLHttpRequest, textStatus, errorThrown) {
+					console.warn("Accenture Syndication: Could not fetch authors from: " + site.address + '/wp-json/syndication/v2/' + endpoint);
+				})
+				.always(function() {
+					processed++;
+					checkDone(processed);
+				});
+		});
+	};
+
+(function ($) {
+	// Do Cookies
+	$(document).ready(function() {
+		$('#sticky-footer .syndicated-origin a').click(function(event) {
+			Cookies.remove('brave_syndication_cookie');
+		});
+
+		$('#sticky-footer .syndicated-origin .syndication-close').click(function(event) {
+			event.preventDefault();
+			$(this).parent().hide();
+		});
+	});
+})(jQuery);

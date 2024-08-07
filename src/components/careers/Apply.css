@@ -1,0 +1,262 @@
+.mainrelateddiv{
+    display: flex;
+ }
+ .relateddiv{ 
+    margin-left: 20px;
+ }
+ .relateddiv a{
+    text-decoration: none;
+ }
+ .mainJobapply{
+     /* background: #ddd; */
+     position: relative;
+     top: 60px;
+     /* bottom: 600px; */
+    
+ }
+ .cardjobapply{
+     width: 100%;
+     text-align: center;
+     background-color: #fff;
+     margin-right: 50px;
+     border-radius: 20px;
+     border: 2px solid darkgray;
+     display: block;
+     /* margin: auto; */
+     margin-top: 20px;
+   margin-left: 50px;
+ }  
+ 
+ 
+ .cardjobapply .cmpnyimg1 img{
+     height: 100px;
+     width: 15%;
+    margin-top: 2rem;
+    float: inline-end;
+   }
+ 
+ 
+   .cardjobapply h3{
+     text-align: start;
+     padding-left:2rem ;
+     padding-top: 2rem;
+  }
+  .fulltime1{
+     display: flex;
+     /* justify-content: flex-start; */
+     margin-left: 2rem;
+     gap: 60px;
+  }
+ 
+ 
+  .cardjobapply .fulltime1 h6{
+     display: flex;
+   
+  }
+  .cardjobapply p{
+     color: #111;
+  text-align:left;
+  margin-left: 20px;
+  font-weight: 400;
+  }
+  .company1{
+     display: flex;
+     justify-content: space-around;
+     margin-left: 2rem;
+     gap: 60px;
+  }
+ 
+  .company1 .applynowbtn2{
+     /* padding-top: 3px; */
+     margin-bottom: 6px;
+    
+  }
+ 
+  .applynowbtn2 {
+     width: 15%;
+     height: 40px;
+     border-radius: 15px;
+     color: #fff;
+     background: #0F2027;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+     /* margin-left: -10rem; */
+  
+  }
+   .backbtn{
+      background: linear-gradient(to left, #2C5364, #203A43, #0F2027);
+     color: #fff;
+width: 8rem;
+border-radius: 8px;
+padding: 5px;
+font-weight: 500;
+     /* border: none; */
+     font-size: 20px;
+  }
+  .applynowbtn2 a{
+     text-decoration: none;
+     color: #fff;
+  }
+  .applynowbtn2:hover{
+     background: rgb(33, 61, 75);
+     transition: 0.3s ease-in-out;
+  }
+ 
+ 
+  .detailsapplyjob{
+     width: 100%;
+     text-align: center;
+     background-color: #fff;
+     margin-right: 50px;
+     border-radius: 20px;
+     /* box-shadow: 1px 1px 2px 1px ; */
+     border: 2px solid darkgray;
+     display: block;
+     margin: auto;
+     margin-top: 40px;
+   margin-left: 50px;
+   margin-bottom: 100px;
+  }
+  .detailsapplyjob div {
+     width: 93%;
+     margin-left: 2rem;
+     
+  }
+  .detailsapplyjob p{
+     color: #111;
+     text-align:justify;
+     font-weight: 500;
+     padding-top: 3px;
+     margin-top: 5px;
+  }
+  .detailsapplyjob p span{
+     font-weight: 400;
+  }
+ 
+ 
+ /* form code */
+ 
+ 
+  .blurred-modal {
+     display: none;
+     position: fixed;
+     top: 0px;
+     left: 0;
+     width: 100%;
+     /* height: 80%; */
+     backdrop-filter: blur(2px); 
+     background-color: rgba(0, 0, 0, 0.5); 
+     /* background-color:rgba(33, 50, 70, 0.5); */
+     justify-content: center;
+     align-items: center;
+ 
+   }
+ 
+   .blurred-modal.open {
+     display: flex;
+   }
+ 
+   .blurred-modal {
+    
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+    
+ }
+ 
+ .close-btn {
+     display: flex;
+     justify-content: flex-end; /* Align the button to the left within the container */
+ }
+ .close-btn .wrongicon{
+     height: 35px;
+     width: 10%;
+    display: flex;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+ }
+ 
+ 
+ /* form image */
+ .formcontainer{
+     max-width: 650px;
+     padding: 28px;
+     margin: 0 28px;
+     border-radius: 10px;
+     overflow: hidden;
+     background: rgba(0, 0, 0, 0.2);
+     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.6);
+     background: #0F2027;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: red; */
+    margin-top: 60px;
+ }
+ .formcontainer h2{
+     font-size: 26px;
+     font-weight: bold;
+     text-align: left;
+     color: #fff;
+     padding-bottom: 8px;
+     border-bottom: 1px solid silver;
+     margin-top: -90px;
+ }
+ .formcontent{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     padding: 20px 0;
+ }
+ .inputform-box{
+     display: flex;
+     flex-wrap: wrap;
+     width: 50%;
+     padding-bottom: 15px;
+ }
+ .inputform-box label{
+     width: 95%;
+     color: #fff;
+     font-weight: bold;
+     margin: 5px 0;
+ }
+ 
+ .inputform-box input{
+     height: 40px;
+     width: 95%;
+     padding: 0 10px;
+     border-radius: 5px;
+     border: 1px solid #134255;
+     background: rgb(221,227,231);
+     
+     outline: none;
+    
+ }
+ .buttonform-container button{
+     width: 25%;
+     padding: 5px;
+     font-size: 20px;
+     color: #fff;
+     border: none;
+     background:#2C5364;
+     transition: 0.3s;
+     border-radius: 5px;
+     /* margin-top: -900px; */
+   
+ }
+ .buttonform-container button:hover{
+   background: #2C5364;
+ }
+ .inputform-box .fileresume input{
+     border: 3px solid transparent;
+ }
+ .inputform-box input, select, textarea{
+     padding: 4px 10px;
+     border: 1px solid #ccc;
+     /* width: fit-content; */
+     border: 1px solid #134255;
+     border-bottom: 1px solid #ccc;
+ }

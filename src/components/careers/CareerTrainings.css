@@ -1,0 +1,194 @@
+
+.carrier{
+   display: flex;
+   position: relative;
+   top: 60px;
+   
+ 
+ }
+ .carrier .leftcarrier{
+    width: 40%;
+    background: #fff;  
+ }
+ .leftcarrier  .bordr{
+    height: 80vh;
+    /* margin-bottom: -30px; */
+    border-right: 2px  solid gray;
+ } 
+ 
+ .carrier .rightcarrier{
+    width: 100%;     
+    /* background: pink; */
+ }
+ .leftcarrier .jobalert{
+    width: 80%;
+    height: 15vh;
+    background: #ddd;
+    /* display: flex; */
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 30px;
+    border-radius: 20px;
+    box-shadow:5px 5px 5px 5px #ddd;
+ }
+ .jobalert{
+    text-align: center;
+    padding: 20px;
+   font-weight: 500;
+ }
+ .leftcarrier .options{
+    padding: 40px;
+ }
+ .options h3{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+ .options label{
+ display: flex;
+ padding: 10px;
+ }
+ 
+ .rightcarrier {
+    overflow-y: auto;
+    height: 90vh; /* Set a fixed height for the scrollbar to appear */
+ }
+ .rightcarrier .carrierinput{
+    /* background-image: url("./public/animBg.jpg"); */
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+     top: 10;
+ }
+ .rightcarrier input {
+    display: block;
+     margin: auto;
+     margin-top: 30px;
+     border-radius: 15px;
+     background: #fff;
+     position: fixed;
+     top: 10;
+ }
+ 
+ 
+ .rightcarrier input {
+    height: 6vh;
+    width: 40%;
+    display: block;
+    padding: 10px 30px 10px 10px; /* Adjust padding to create space for the search icon */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23101010"><path d="M21.39 20.72l-4.86-4.86C18.22 14.27 19 11.67 19 9c0-5-4-9-9-9s-9 4-9 9 4 9 9 9c2.67 0 5.27-.78 7.86-2.25l4.86 4.86c.19.2.45.3.61.3s.41-.1.6-.29c.39-.39.39-1.02.01-1.4zM10 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>');
+    background-size: 20px; /* Adjust the size of the icon */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Adjust the position of the icon */
+    margin-left: 80px;
+ }
+ 
+ .rightcarrier input {
+    /* text-align: center; */
+    font-size: 16px;
+ }
+ 
+ .extra{
+    background: transparent;
+    height: 100px;
+    width: 40px;
+ }
+ 
+ .cardjob{
+   width: 70%;
+    /* height: 280px; */
+    /* line-height: 110px; */
+    text-align: center;
+    background-color: #fff;
+    margin-right: 50px;
+    border-radius: 20px;
+    /* box-shadow: 1px 1px 2px 1px ; */
+    border: 2px solid darkgray;
+    display: block;
+    /* margin: auto; */
+    margin-top: 20px;
+  margin-left: 50px;
+  /* margin-bottom: 40px; */
+    /* position: fixed; */
+ }
+ .cardjob a{
+    text-decoration: none;
+ }
+  
+ .cardjob .cmpnyimg img{
+   /* height: 250px; */
+   /* min-width: 70%; */
+   height: 120px;
+   width: 20%;
+  margin-top: 2rem;
+  float: inline-end;
+ }
+ 
+ 
+ .cardjob h3{
+    text-align: start;
+    padding-left:2rem ;
+    padding-top: 2rem;
+    color: #111;
+   
+ }
+ 
+ .fulltime{
+    display: flex;
+    /* justify-content: flex-start; */
+    margin-left: 2rem;
+    gap: 60px;
+ }
+ .cardjob .fulltime h6{
+    display: flex;
+  
+ }
+ .cardjob .skillsdiv{
+    width: 80%;
+    /* background: red; */
+ }
+ .cardjob .skills{
+    color: #111;
+ text-align:left;
+ margin-left: 20px;
+ font-weight: 400;
+ 
+ }
+ .cardjob .summary{
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: darkslategray;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    
+ }
+ .company{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 2rem;
+    gap: 60px;
+ }
+ 
+ 
+ .applynowbtn {
+    width: 25%;
+    height: 32px;
+    border-radius: 15px;
+    
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
+    /* margin-left: 22rem; */
+   margin-bottom: 6px;
+  
+ }
+ .applynowbtn a{
+    text-decoration: none;
+    color: #fff;
+ }
+ .applynowbtn:hover{
+    background: rgb(33, 61, 75);
+    transition: 0.3s ease-in-out;
+ }

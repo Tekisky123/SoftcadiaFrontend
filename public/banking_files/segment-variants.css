@@ -1,0 +1,32 @@
+.segment-page-variant .bx-wrapper div.bx-controls-direction a.bx-prev,
+.segment-page-variant .bx-wrapper div.bx-controls-direction a.bx-next {
+  background-color: #2f539d;
+  background-size: 30px;
+  opacity: .95;
+  width: 35px;
+}
+
+.segment-page-variant .bx-wrapper div.bx-controls-direction a.bx-prev {
+  background-position: center right;
+}
+
+.segment-page-variant .bx-wrapper div.bx-controls-direction a.bx-next {
+  background-position: center left;
+}
+
+.segment-page-variant .bx-wrapper div.bx-controls-direction a i.fa {
+  font-size: 3rem;
+}
+
+.segment-page-variant .carousel .carouselpost .thumboverdate {
+  padding: 20px 50px;
+}
+
+.segment-page-variant .grid-item .thumbovertext .title,
+.segment-page-variant .grid-item .thumbovertext .title a {
+  margin-top: 35px;
+}
+
+.segment-page-variant .grid-item .thumbovertext {
+  background-color: transparent;
+}

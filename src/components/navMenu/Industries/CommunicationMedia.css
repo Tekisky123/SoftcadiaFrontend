@@ -1,0 +1,32 @@
+
+.mediaimg{
+    position: relative;
+/* bottom: 10%; */
+width: 100%;
+height: 400px;
+
+}
+.cmbgimg{
+    width: 100%;
+    object-fit: cover;
+    height: 85vh;
+    display: block;
+    border-radius: 1px;
+}
+.cmbigdiv{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+}
+.capital123{
+    margin-top: 32vh;
+}
+.capital123 h2{
+    text-align: center;
+}
+.capital123 p{
+    text-align: center;
+}
+/* .mediaimg .text{
+    color: white;
+} */

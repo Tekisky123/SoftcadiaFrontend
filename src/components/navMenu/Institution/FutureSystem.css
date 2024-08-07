@@ -1,0 +1,17 @@
+
+
+.Futuresyscontainer {
+  position: relative;
+    width: 100%;
+    height: 600px;
+    /* max-width: 600px; */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .futuresysimg{
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }

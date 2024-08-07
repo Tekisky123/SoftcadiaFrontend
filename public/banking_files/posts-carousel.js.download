@@ -1,0 +1,105 @@
+jQuery(function ($) {
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function () {
+            var context = this, args = arguments;
+            var later = function () {
+                timeout = null;
+                if (!immediate) {
+                    func.apply(context, args);
+                }
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) {
+                func.apply(context, args);
+            }
+        };
+    }
+
+    function doPageBottom() {
+        if (_satellite !== null) {
+            _satellite.pageBottom();
+        }
+    }
+
+    function appendVideoModal(content, excerpt) {
+        let videoModalHtml = '<div id="video-modal" class="video-modal">';
+        videoModalHtml += content;
+        if (typeof excerpt !== 'undefined' && excerpt.length > 1) { videoModalHtml += '<p>' + excerpt + '</p>'; }
+        videoModalHtml += '</div>';
+        $(videoModalHtml).appendTo('body').modal();
+    }
+
+    /**
+     * Handle a YouTube link and provide the correct embed in a promise.
+     *
+     * @param link The YouTube link.
+     * @returns {Promise<string>} The promise that resolves in HTML for an iframe/
+     */
+    function handleYouTube(link) {
+        let $video = link.split('v=')[1];
+        if (!$video) {
+            $video = link.split('youtu.be/')[1];
+            if (!$video) {
+                $video = link.split('embed/')[1];
+            }
+        }
+        let $id = $video.split('&')[0];
+        return '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + $id + '" frameborder="0" allowfullscreen></iframe>';
+    }
+
+    $(document).ready(function () {
+        let appended = false;
+        let $postsCarousel = $('.acc-posts-carousel-wrapper');
+        if ($postsCarousel.length > 0) {
+            $postsCarousel.slick();
+            $('.acc-posts-carousel-wrapper .video-modal').each(function (index, el) {
+                $(el).click(function (event) {
+                    event.preventDefault();
+                    let link = $(this).attr('href');
+                    let excerpt = $(this).attr('data-video-excerpt');
+
+                    if (link.indexOf('youtube') > -1 || link.indexOf('youtu.be') > -1) {
+                        appendVideoModal(handleYouTube(link), excerpt);
+                    } else if (link.indexOf('vimeo') > -1) {
+                        let $video = link.split('vimeo.com/')[1];
+                        let iframe = '<iframe src="https://player.vimeo.com/video/' + $video + '" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                        appendVideoModal(iframe, exceprt);
+                    } else {
+                        $.ajax({
+                            url: link,
+                            crossDomain: true,
+                            success: function (newHTML, textStatus, jqXHR) {
+                                let $modal = $(newHTML).find('#video-frame').appendTo('body').modal();
+                                let urlReplace = "#video-modal=" + link;
+                                history.pushState(null, null, urlReplace);
+                                $modal.addClass('.video-modal');
+                                $modal.on($.modal.BEFORE_CLOSE, function (event, modal) {
+                                    history.pushState(null, null, '#');
+                                });
+                                appended = true;
+                                doPageBottom();
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                console.error(errorThrown);
+                            }
+                        });
+                    }
+
+                    return false;
+                });
+            });
+            $(window).on('popstate', function () {
+                $.modal.close();
+            });
+            if (window.location.href.indexOf('#video-modal') !== -1) {
+                var modalArgument = '#video-modal=';
+                var start = window.location.href.indexOf(modalArgument) + modalArgument.length;
+                var dataSRC = window.location.href.substring(start);
+                $('.acc-posts-carousel-wrapper .video-modal[href="' + dataSRC + '"]').trigger('click');
+            }
+        }
+    });
+});

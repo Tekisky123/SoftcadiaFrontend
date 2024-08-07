@@ -1,0 +1,33 @@
+
+.capitalimg{
+    position: relative;
+    /* bottom: 10%; */
+    width: 100%;
+    height: 400px;
+}
+.capitalbigimg{
+    width: 100%;
+    object-fit: cover;
+    height: 85vh;
+    display: block;
+    border-radius: 1px;
+}
+.capitalmrktbgdiv{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+}
+ .capitaldivcon{
+    /* background-color: red; */
+    /* margin-top: 10vh; */
+    /* width: 100%; */
+    /* height: 30vh; */
+    margin-top: 280px;
+   
+    text-align: center;
+    font-weight: bold;
+}
+.chr{
+    border-width: 5px;
+    border-color: #111;
+}

@@ -1,0 +1,99 @@
+.success-story {
+    background-color: #f6f6f6;
+    margin-top: 340px;
+  }
+  .sec-heading{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 20px;
+  }
+  .slider{
+    display: flex;
+  }
+  
+    .slider img {
+        height: 350px;
+        width: 450px;
+        border-radius: 20px;
+    }
+  
+    .slider .slide-text {
+        float: left;
+    }
+  
+    .slider .slide-img {
+        text-align: center;
+  
+    }
+  
+        .slider .slide-text div {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 40px;
+        }
+  
+    .slider p {
+        padding-bottom: 30px;
+        margin-top: 20p0x;
+    }
+    /* .clientbtn{
+       height: 5vh;
+       width: 20vh;
+       background-color: red;
+       border-radius: 20px;
+    } */
+
+
+    .clientbtn{
+      display: inline-block;
+      text-decoration: none;
+      /* padding: 14px 40px; */
+      color: #222;
+      /* background: lightblue; */
+      font-style: 14px;
+      border-radius: 30px;
+      border-top-right-radius: 0;
+      transition: 0.5s;
+  
+  
+  }
+  .cntnt4 .clientbtn{
+     
+      /* padding: 15px 80px; */
+      /* font-size: 16px; */
+      width: 30%;
+      animation-delay: 1s;
+      background: pink;
+      border-top-right-radius: 0;
+      border: none;
+      padding: 5px;
+      transition: 0.5s;
+  }
+  .cntnt4 .clientbtn a{
+    color: #222;
+    text-decoration: none;
+  }
+  .cntnt4 .clientbtn:hover{
+      border-top-right-radius: 30px;
+      background: rgb(93, 112, 119);
+  }
+  .tech h4{
+    text-align: center;
+    font-weight: 400;
+  }
+  
+    .highlights{
+
+      background-color: #f6f6f6;
+    }
+  
+
+    @media screen and (max-width: 1024px) {
+ 
+      .success-story{
+        margin-top: 2000px;
+        
+      }
+    }
+ 

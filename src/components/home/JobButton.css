@@ -1,0 +1,20 @@
+.jbtn{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 30px;
+}
+.jbtn .jbtn1{
+    background-color: #ddd;
+    color: #111;
+    width: 35vh;
+    border-radius: 15px;
+    font-style: 15px;
+    font-weight: 500;
+}
+.jbtn .jbtn1:hover{
+    text-decoration: underline;
+    background: gray;
+    transition: 0.5s;
+}

@@ -1,0 +1,175 @@
+ 
+/* body{
+    background: #eef8ff;
+} */
+.footer{
+    /* box-sizing: border-box; */
+    width: 100%;
+    /* height: auto; */
+    /* height: 55vh; */
+    position: absolute;
+  box-sizing: border-box;
+    /* bottom: 0; */
+     margin-top: 80px;
+     background-color: #103257f5;
+     background: #0F2027;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    color: #fff;
+    padding:65px  ;
+    border-top-left-radius: 100px;     
+    font-size: 13px;
+    line-height: 20px;
+   
+    /* height: 30rem; */
+    /* margin-top: auto; */
+
+}
+.row5{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.colm2{
+    flex-basis: 30%;
+    padding: 10px;
+}
+
+.colm2:nth-child(2), .colm2:nth-child(3){
+    flex-basis: 10%;
+}
+.colm2 p{
+    text-align: start;
+    color: #fff;
+}
+.logo2{
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.colm2 h3{
+    width: fit-content;
+    margin-bottom: 30px;
+    position: relative;
+
+}
+.email-id{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    /* margin: 20px 0; */
+}
+.colm2 ul li{
+    list-style: none;
+    margin-bottom: 12px;
+    margin-left: -20px;
+
+}
+.colm2 ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+.colm2 ul li a:hover{
+    text-decoration: underline;
+}
+.frm{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+
+}
+.frm .f1{
+font-size: 18px;
+margin-right: 10px;
+}
+.frm input{
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+.frm button{
+   background: transparent;
+   border: 0;
+   outline: none;
+   cursor: pointer;
+}
+
+.frm button .f2{
+    font-size: 16px;
+    color: #ccc;
+
+}
+.social-icons .f3{
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   text-align: center;
+   line-height: 40px;
+   font-size: 20px;
+   color: #000;
+   background: #fff;
+   margin-right: 15px;
+   cursor: pointer;
+}
+
+.hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 10px auto;
+}
+.copyrit{
+    text-align: center;
+}
+.underline{
+    width: 100%;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    overflow: hidden;
+}
+.underline span{
+    width: 15px;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+
+}
+@keyframes moving{
+    0%{
+        left: -20px;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+
+@media (max-width:700px){
+    .footer{
+        bottom: unset;
+    }
+    .colm2{
+        flex-basis: 100%;
+    
+    }
+    .colm2:nth-child(2), .colm2:nth-child(3){
+        flex-basis: 100%;
+    }
+}

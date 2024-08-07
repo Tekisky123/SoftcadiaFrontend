@@ -1,0 +1,63 @@
+
+
+
+
+
+  .fancy-cards-container {
+    margin-left: 60px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+  
+  /* Fancy Card */
+  .fancy-card {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  /* Card Content */
+  .fancycard-content {
+    padding: 20px;
+    
+  }
+  
+  .fancycard-content h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Card Image */
+  .fancycard-image img {
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  
+  /* Hover Effect */
+  .fancy-card:hover {
+    
+    transform: scale(1.05);
+  }
+  
+  .text-contentapp{
+    background-color: rgb(245, 238, 238);
+   padding: 20px;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .text-contentapp h2{
+    font-size: 40px;
+  }
+  .text-contentapp p{
+    padding-top: 5px;
+    font-size: 20px;
+  }

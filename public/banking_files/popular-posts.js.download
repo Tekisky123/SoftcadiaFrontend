@@ -1,0 +1,16 @@
+jQuery(function($) {
+  $(document).ready(function() {
+    var prefix = '.acc-popular-posts-';
+    $('.acc-popular-posts-base').each(function(index, el) {
+      var $widget = $(this);
+
+      $widget.find('.acc-popular-posts-tabs > a').click(function(event) {
+        event.preventDefault();
+        $(this).siblings('a').removeClass('active');
+        $(this).addClass('active');
+        $widget.find('.acc-popular-posts-tab').removeClass('active');
+        $widget.find('#'+$(this).attr('target')).addClass('active');
+      });
+    });
+  });
+});

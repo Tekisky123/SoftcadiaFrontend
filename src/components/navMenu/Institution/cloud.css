@@ -1,0 +1,58 @@
+
+.clouddiv {
+    position: relative;
+}
+
+.cloudvid {
+    position: relative;
+}
+
+.cloudvid video {
+    width: 100%;
+
+} 
+
+.cloudvid h1 {
+    position: absolute;
+    top: 50%; /* Adjust the top position as needed */
+    left: 50%; /* Adjust the left position as needed */
+    transform: translate(-50%, -50%);
+    text-align:justify;
+    color: #fff; /* Set the text color as needed */
+    font-size: 4em; /* Adjust the font size as needed */
+    margin: 0;
+    padding: 10px; /* Add padding as needed */
+  
+}
+.cloudvid p {
+    position: absolute;
+    top: 60%; /* Adjust the top position as needed */
+    left: 50%; /* Adjust the left position as needed */
+    transform: translate(-50%, -50%);
+    text-align:center;
+    color: #fff; /* Set the text color as needed */
+    font-size: 2em; /* Adjust the font size as needed */
+    margin: 0;
+    padding-top: 25px;
+}
+.cloudh2{
+    background: #ccc;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.cloudh2 h2{
+    padding-top: 10px;
+}
+.cloudh2 p{
+    color: #111;
+    font-weight: 400;
+    text-align: left;
+    /* line-height: 20px; */
+    font-size: 18px;
+    padding-bottom: 8px;
+}
+.cloudh2 h3{
+    text-align: center;
+    text-decoration: underline;
+}
